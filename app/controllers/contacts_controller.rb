@@ -1,7 +1,6 @@
 class ContactsController < ApplicationController
   # for GET method
   def new
-
   end
 
   # for POST method
@@ -15,6 +14,7 @@ class ContactsController < ApplicationController
   end
 
   private
+
   # Premit for marams
   def contact_params
     params.require(:contact).permit(:email, :message)
