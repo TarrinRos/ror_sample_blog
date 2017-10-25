@@ -21,6 +21,9 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   private
 
   # Premit for marams
