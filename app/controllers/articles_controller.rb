@@ -12,8 +12,7 @@ class ArticlesController < ApplicationController
   # for POST method
   def create
     @article = Article.new(article_params)
-    if @article.valid?
-      @article.save
+    if @article.save
       # auto redirection required page
       redirect_to @article
     else
@@ -22,6 +21,17 @@ class ArticlesController < ApplicationController
   end
 
   def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+    if @article.update(article_params)
+      # auto redirection required page
+      redirect_to @article
+    else
+      render action: 'edit'
+    end
   end
 
   private
