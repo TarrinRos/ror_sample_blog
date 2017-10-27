@@ -34,6 +34,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    # to articles list redirection
+    redirect_to articles_path
+    # redirect_to action: :index - alternative redirection
+  end
+
   private
 
   # Premit for marams
