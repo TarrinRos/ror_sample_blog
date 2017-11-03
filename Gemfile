@@ -57,5 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 # BOOTSTRAP rails
-gem 'bootstrap-sass', '~> 3.2.0'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'autoprefixer-rails'
+
+# JQUERY
+gem 'jquery-rails'
