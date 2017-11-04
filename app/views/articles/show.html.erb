@@ -12,12 +12,13 @@
 </p>
 
 
+<% if user_signed_in? %>
 <p>
   <%= form_for([@article, @article.comments.build]) do |f| %>
   <hr>
 <h4>Add Comment:</h4>
   <p>
-    <%= current_user.username %> <br>
+    <%= f.label :author %> <br>
   <!--input field -->
    <%= f.text_field :author %>
   </p>
@@ -30,4 +31,8 @@
     <%= f.submit %>
   </p>
   <% end %>
+  <% else %>
+  For comments please
+  <%= link_to 'Sign In', new_user_session_path %>
+<% end %>
 </p>

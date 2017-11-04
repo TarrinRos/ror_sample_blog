@@ -4,9 +4,13 @@
   <p><%= article.text %></p>
   <p style="font-size:12px"><%= article.created_at %></p>
   <!-- Correct syntax for links in RoR -->
-  <p><%= link_to 'Show', article_path(article) %>
+  <p><%= link_to 'Show comments', article_path(article) %>
+  <% if user_signed_in? %>
+  |
   <%= link_to 'Edit', edit_article_path(article) %>
+  |
   <%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you shure?' } %>
   </p>
   <hr>
+  <% end %>
 <% end %>
